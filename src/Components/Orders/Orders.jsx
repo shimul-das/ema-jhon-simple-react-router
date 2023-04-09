@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './orders.css'
 import Cart from '../Cart/Cart'
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import ReviewItem from '../ReveiwItem/ReviewItem';
 import Product from '../Product/Product';
 import { deleteShoppingCart, removeFromDb } from '../utilities/fakedb';
@@ -28,8 +28,11 @@ return (
         }
     </div>
     <div className='cartContainer'>
-        <Cart cart={cart1} handleclearcart={handleclearcart}></Cart>
+        <Cart cart={cart1} handleclearcart={handleclearcart}>
+            <Link to='/checkout'><button className='btn-procced'>Procced to checkout</button></Link>
+        </Cart>
     </div>
+    
 
 </div>
 )
